@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow admin path from public search indexing
+Disallow: /admin
+
+# Sitemaps
+Sitemap: https://startling-meringue-520cae.netlify.app/sitemap.xml

@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* 2D Fast Rendering & Smooth Performance */
+html {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* Eliminate 300ms tap delay on touch devices for instant click response */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Safe area padding for iPhones with bottom home bar */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}

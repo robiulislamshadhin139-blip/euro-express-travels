@@ -1,0 +1,62 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isAdmin() {
+      let email = request.auth.token.email;
+      let config = get(/databases/$(database)/documents/settings/config);
+      let adminEmails = config != null ? config.data.get('adminEmails', []) : [];
+      
+      return request.auth != null && (
+        email == 'hellofingenix@gmail.com' ||
+        email == 'taslimaakterr469@gmail.com' ||
+        email == 'taslimaakter2904@gmail.com' ||
+        email == 'euroexpresstravels65@gmail.com' ||
+        email == 'robiulshadhin139@gmail.com' ||
+        email in adminEmails
+      );
+    }
+    
+    match /settings/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /services/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /team/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /faqs/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /reviews/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /inquiries/{inquiryId} {
+      allow create: if true; 
+      allow read: if isAdmin() || (
+        request.auth != null && (
+          request.auth.uid == resource.data.userId || 
+          request.auth.token.email == resource.data.userEmail ||
+          request.auth.token.email == resource.data.customerEmail
+        )
+      );
+      allow update, delete: if isAdmin();
+    }
+    
+    match /documents/{documentId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}
+

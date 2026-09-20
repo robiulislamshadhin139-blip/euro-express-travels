@@ -1,0 +1,6 @@
+{
+  "name": "Euro Express Travels",
+  "description": "Leading travel and visa processing agency offering Worldwide Visit Visas, Student Visas, Work Permits, Schengen Visas, and Air Ticketing with an integrated admin panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

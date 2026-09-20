@@ -1,0 +1,42 @@
+{
+  "collections": {
+    "services": {
+      "description": "Travel and visa services offered by the company",
+      "fields": {
+        "title": { "type": "string", "description": "Name of the service" },
+        "description": { "type": "string", "description": "Detailed description" },
+        "category": { "type": "string", "description": "Service category (e.g., Visa, Ticketing)" },
+        "price": { "type": "string", "description": "Price or starting price" },
+        "icon": { "type": "string", "description": "Lucide icon name" },
+        "features": { "type": "array", "items": { "type": "string" }, "description": "List of service features" }
+      }
+    },
+    "inquiries": {
+      "description": "Customer service requests and bookings",
+      "fields": {
+        "serviceId": { "type": "string", "description": "ID of the requested service" },
+        "customerName": { "type": "string", "description": "Name of the customer" },
+        "email": { "type": "string", "description": "Contact email" },
+        "phone": { "type": "string", "description": "Contact phone" },
+        "message": { "type": "string", "description": "Additional notes" },
+        "status": { "type": "string", "description": "Status of the inquiry (pending, completed, etc.)" },
+        "createdAt": { "type": "timestamp", "description": "Time of request" }
+      }
+    },
+    "documents": {
+      "description": "Confidential internal admin documents, visa papers, and client files with screenshot/download prevention",
+      "fields": {
+        "title": { "type": "string", "description": "Title or name of the document" },
+        "category": { "type": "string", "description": "Document category (e.g. Visa, Passport, Ticket, Contract)" },
+        "fileUrl": { "type": "string", "description": "Secure Cloudinary file URL" },
+        "publicId": { "type": "string", "description": "Cloudinary public ID" },
+        "fileType": { "type": "string", "description": "pdf, image, doc, etc." },
+        "fileFormat": { "type": "string", "description": "Extension like pdf, png, jpg" },
+        "fileSize": { "type": "number", "description": "Size in bytes" },
+        "uploadedByEmail": { "type": "string", "description": "Email of admin who uploaded" },
+        "uploadedAt": { "type": "string", "description": "Upload timestamp ISO" },
+        "notes": { "type": "string", "description": "Admin confidential notes" }
+      }
+    }
+  }
+}
