@@ -5,4 +5,4 @@ Allow: /
 Disallow: /admin
 
 # Sitemaps
-Sitemap: https://startling-meringue-520cae.netlify.app/sitemap.xml
+Sitemap: https://euroexpresstravels.com/sitemap.xml
