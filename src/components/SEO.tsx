@@ -6,7 +6,7 @@ export default function SEO() {
   const location = useLocation();
 
   useEffect(() => {
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://startling-meringue-520cae.netlify.app';
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://euroexpresstravels.com';
     const currentUrl = `${origin}${location.pathname}`;
 
     let title = "Euro Express Travels | Best Visa Processing & Travel Agency in Bangladesh";
