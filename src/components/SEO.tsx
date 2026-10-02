@@ -281,6 +281,14 @@ export default function SEO() {
     setMeta('meta[name="twitter:title"]', title);
     setMeta('meta[name="twitter:description"]', description);
 
+    // Geo-Targeting Meta Tags for Bangladesh
+    setMeta('meta[name="geo.region"]', "BD-13"); // BD-13 is the ISO code for Sylhet Division
+    setMeta('meta[name="geo.placename"]', "Bahubal, Hobiganj, Bangladesh");
+    setMeta('meta[name="geo.position"]', "24.3537;91.5385");
+    setMeta('meta[name="ICBM"]', "24.3537, 91.5385");
+    setMeta('meta[name="target_country"]', "BD");
+    setMeta('meta[name="content-language"]', "bn-BD, en-BD");
+
     // Canonical link management
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
